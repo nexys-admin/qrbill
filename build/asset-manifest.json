@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/qrbill/build/static/js/main.05ee270b.chunk.js",
-    "main.js.map": "/qrbill/build/static/js/main.05ee270b.chunk.js.map",
+    "main.js": "/qrbill/build/static/js/main.9f7b4dcb.chunk.js",
+    "main.js.map": "/qrbill/build/static/js/main.9f7b4dcb.chunk.js.map",
     "runtime-main.js": "/qrbill/build/static/js/runtime-main.58a47206.js",
     "runtime-main.js.map": "/qrbill/build/static/js/runtime-main.58a47206.js.map",
-    "static/js/2.bdb94beb.chunk.js": "/qrbill/build/static/js/2.bdb94beb.chunk.js",
-    "static/js/2.bdb94beb.chunk.js.map": "/qrbill/build/static/js/2.bdb94beb.chunk.js.map",
+    "static/js/2.f28d5a6d.chunk.js": "/qrbill/build/static/js/2.f28d5a6d.chunk.js",
+    "static/js/2.f28d5a6d.chunk.js.map": "/qrbill/build/static/js/2.f28d5a6d.chunk.js.map",
     "index.html": "/qrbill/build/index.html",
-    "precache-manifest.4f42fc78aaf0639949a7aec0b746f942.js": "/qrbill/build/precache-manifest.4f42fc78aaf0639949a7aec0b746f942.js",
+    "precache-manifest.1a81f0ee4da641ca4307f70721adbdae.js": "/qrbill/build/precache-manifest.1a81f0ee4da641ca4307f70721adbdae.js",
     "service-worker.js": "/qrbill/build/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.58a47206.js",
-    "static/js/2.bdb94beb.chunk.js",
-    "static/js/main.05ee270b.chunk.js"
+    "static/js/2.f28d5a6d.chunk.js",
+    "static/js/main.9f7b4dcb.chunk.js"
   ]
 }
