@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import QR from '../lib/qr';
 import * as Convert from '../lib/convert';
 import { dataLabels } from '../lib/data-examples';
+import { sampleJson, sampleArray } from '../lib/convert.data';
 
-// swiss qr code should be 46 x 46 mm and the cross 7 x 7 mmm in the middle
+import Form from './form';
 
-// this is a quick wrapper around the qrcode generator for the generation f qqr code with JSON cntent
 function SwissQr() {
+  const [ data, setData ]= useState(sampleArray);
 
-  console.log(dataLabels)
+  const refreshQr = x => {
+    setData(Convert.jsonToBreakSepFormat(x));
+  }
 
   return <div className="row">
     <div className="col-md-6">
-      <h3> Generated Swiss QR</h3>
-      <QR value={dataLabels}/>
+      <h3>Generated Swiss QR</h3>
+      <QR value={data}/>
     </div>
-    <div className="col-md-6">
+    <div className="col-md-3">
+      <Form initial={sampleJson} onRefresh={refreshQr}/>
+    </div>
+    <div className="col-md-3">
       <h3>QR Content <small>as JSON</small></h3>
-      <pre>{JSON.stringify(Convert.arrayToJson(dataLabels), null, 2)}</pre>
+      <pre>{JSON.stringify(Convert.arrayToJson(data), null, 2)}</pre>
     </div>
   </div>;
 }
