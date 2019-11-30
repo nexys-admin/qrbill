@@ -10,12 +10,18 @@ const style = {
 
 const title = 'Swiss QR Bill';
 
+const prefix = process.env.PUBLIC_URL || '';
+
 const menus = [ 
   {name: 'QR Reader', link: '/qr/read'},
   {name: 'QR Writer', link: '/qr/write'},
   {name: 'Convert', link: '/convert'},
   {name: 'Validate', link: '/validate'},
-]
+].map(x => {
+  x.link = prefix + x.link;
+
+  return x;
+})
 
 
 function Layout(props) {
