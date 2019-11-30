@@ -1,0 +1,45 @@
+{
+  "name": "@nexys/qrbill",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0"
+  },
+  "devDependencies": {
+    "@nexys/uibs4": "0.0.4",
+    "path-to-regexp": "^6.1.0",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-qr-reader": "^2.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "PUBLIC_URL=/string-replace/build react-scripts build",
+    "buildpackage": "babel src/lib --out-dir dist/;rm dist/*.test.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "index.js",
+    "dist/*"
+  ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
