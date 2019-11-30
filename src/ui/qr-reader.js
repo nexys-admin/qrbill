@@ -20,7 +20,7 @@ export default class Test extends Component {
 
       console.log(j)
 
-      if (Validate.validate(Validate.sampleJson, j)) {
+      if (Validate.validateBoolean(j)) {
         this.setState({
           result: j
         });
