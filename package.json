@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=/string-replace/build react-scripts build",
+    "build": "PUBLIC_URL=/qrbill/build react-scripts build",
     "buildpackage": "babel src/lib --out-dir dist/;rm dist/*.test.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
