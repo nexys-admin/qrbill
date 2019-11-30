@@ -2,6 +2,7 @@
   "name": "@nexys/qrbill",
   "version": "0.1.2",
   "license": "MIT",
+  "repository": "git://github.com/Nexysweb/qrbill.git",
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0"
   },
