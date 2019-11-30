@@ -54,6 +54,6 @@ export const sampleJson = Joi.object({
 export const validate = (schema, o) => {
   //console.log(o)
   const s = schema.validate(o, { presence: 'required'})
-  //console.log(s)
+  console.log(s)
   return s.error === null;
 }

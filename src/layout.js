@@ -10,7 +10,7 @@ const style = {
 
 const title = 'Swiss QR Bill';
 
-const menus = [
+const menus = [ 
   {name: 'QR Reader', link: '/qr/read'},
   {name: 'QR Writer', link: '/qr/write'},
   {name: 'Convert', link: '/convert'},

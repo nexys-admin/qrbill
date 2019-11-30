@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import QrReader from 'react-qr-reader'
+import React, { Component } from 'react';
+import QrReader from 'react-qr-reader';
+
+import * as Validate from '../lib/validate';
+import { Header, arrayToJson } from '../lib/convert';
  
 export default class Test extends Component {
   constructor(props) {
@@ -12,9 +15,18 @@ export default class Test extends Component {
  
   handleScan = data => {
     if (data) {
-      this.setState({
-        result: data
-      })
+      const arr = data.split('\n');
+      const j = arrayToJson(arr);
+
+      console.log(j)
+
+      if (Validate.validate(Validate.sampleJson, j)) {
+        this.setState({
+          result: j
+        });
+      } else {
+        this.setState({result: 'The QR Code read is not a valid Swiss QRBIll'});
+      }
     }
   }
 
@@ -46,8 +58,8 @@ export default class Test extends Component {
     return (
       <div>
         {this.renderReader()}
-        <p >{this.state.result}</p>
-        <button onClick={(x) => this.toggleReader()}>Show Camera</button>
+        <pre>{JSON.stringify(this.state.result, null, 2)}</pre>
+        
       </div>
     )
   }
