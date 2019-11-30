@@ -1,12 +1,23 @@
 {
   "name": "@nexys/qrbill",
   "version": "0.1.1",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "@nexys/uibs4": "0.0.4",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-minify": "^0.5.1",
     "path-to-regexp": "^6.1.0",
     "qrcode.react": "^1.0.0",
     "react": "^16.12.0",
@@ -18,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "PUBLIC_URL=/qrbill/build react-scripts build",
-    "buildpackage": "babel src/lib --out-dir dist/;rm dist/*.test.js",
+    "buildpackage": "babel src/lib --out-dir dist/;rm dist/**.test.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
