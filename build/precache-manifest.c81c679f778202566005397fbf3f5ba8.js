@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7d4404f32d3e85e63bfb2c3021d59f9f",
+    "revision": "380e4eb3a1ab9bfcf34ef0e3a9795063",
     "url": "/qrbill/build/index.html"
   },
   {
