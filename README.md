@@ -8,7 +8,9 @@
 * [see website](https://nexysweb.github.io/qrbill)
 * [see it in action](https://nexysweb.github.io/qrbill/build)
 
-Note when using the package: When using the package: react and the QR dependency will not be included, they will need to be installed separately.
+## Package
+
+The package only contains the content of `lib`. When using the package: react and the QR dependency will not be included, they will need to be installed separately (see `package.json` for the references).
 
 ## Resources
 
