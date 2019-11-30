@@ -6,8 +6,8 @@ const { Form } = UI;
 
 // helper to display wrapper and input in one component
 const InputWrapper = props => {
-  const { name, onChange, form } = props;
-  const errors = {};
+  // for now, no error management
+  const { name, onChange, form, errors = {} } = props;
 
   const value = Utils.ds.get(name, form);
 
@@ -18,9 +18,6 @@ const InputWrapper = props => {
 
 function QRBillForm(props = {initial: {}}) {
   const [ form, changeForm ] = useState(props.initial);
-
-  // for now, no error management
-  const errors = {};
 
   const handleChange = v => {
     const f = Utils.ds.set(v.name, v.value, form);

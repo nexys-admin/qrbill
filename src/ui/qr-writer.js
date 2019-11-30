@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import QR from '../lib/qr';
 import * as Convert from '../lib/convert';
-import { dataLabels } from '../lib/data-examples';
+//import { dataLabels } from '../lib/data-examples';
 import { sampleJson, sampleArray } from '../lib/convert.data';
 
 import Form from './form';
