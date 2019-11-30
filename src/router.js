@@ -34,6 +34,7 @@ function Router(props) {
       <Route path="/convert" component={Convert} props={props} />
       <Route path="/validate" component={Validate} props={props} />
       <Route exact path="/" component={Main} />
+      <Route exact path="/qrbill/build/" component={Main} />
       <Route path="/" component={NotFound} />
     </Switch>
   </Layout>);
