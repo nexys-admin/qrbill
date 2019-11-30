@@ -9,6 +9,7 @@ function SwissQr(props) {
   const { value } = props;
 
   if (!Array.isArray(value) || value.length !== 34) {
+    console.error('an array is expected as input');
     return null;
   }
 
