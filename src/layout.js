@@ -10,7 +10,7 @@ const style = {
 
 const title = 'Swiss QR Bill';
 
-const prefix = ''; //process.env.PUBLIC_URL || '';
+const prefix = process.env.PUBLIC_URL || '';
 
 const menus = [ 
   {name: 'QR Reader', link: '/qr/read'},

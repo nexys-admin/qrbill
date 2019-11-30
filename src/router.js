@@ -19,7 +19,7 @@ import { dataLabels } from './lib/data-examples';
 const NotFound = () => <p>Page Not Found</p>;
 
 
-const prefix = ''; //process.env.PUBLIC_URL || '';
+const prefix = process.env.PUBLIC_URL || '';
 
 function Router(props) {
   return (<Layout>
