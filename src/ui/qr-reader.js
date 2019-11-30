@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import QrReader from 'react-qr-reader';
 
 import * as Validate from '../lib/validate';
-import { Header, arrayToJson } from '../lib/convert';
+import { arrayToJson } from '../lib/convert';
  
 export default class Test extends Component {
   constructor(props) {

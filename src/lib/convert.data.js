@@ -20,7 +20,7 @@ export const sampleAddressJson = {
   Ctry: 'CH'
 };
 
-const sample = `SPC
+export const sample = `SPC
 0200
 1
 CH4431999123000889012

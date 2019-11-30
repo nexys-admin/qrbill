@@ -2,23 +2,23 @@ import * as Validate from './validate';
 import { sampleAddressJson, sampleJson, sampleArray } from './convert.data';
 import { Header, arrayToJson } from './convert';
 
-test('validate address', () => {
-  expect(Validate.validate(Validate.sAddress, sampleAddressJson)).toEqual(true);
+test('validateBoolean address', () => {
+  expect(Validate.validateBoolean(sampleAddressJson, Validate.sAddress)).toEqual(true);
 })
 
-test('validate cdtr', () => {
-  expect(Validate.validate(Validate.vCdtrInf, {IBAN: 'CH4431999123000889012', Cdtr: sampleAddressJson})).toEqual(true);
+test('validateBoolean cdtr', () => {
+  expect(Validate.validateBoolean({IBAN: 'CH4431999123000889012', Cdtr: sampleAddressJson}, Validate.vCdtrInf)).toEqual(true);
 });
 
-test('validate header', () => {
-  expect(Validate.validate(Validate.vHeader, Header)).toEqual(true)
+test('validateBoolean header', () => {
+  expect(Validate.validateBoolean(Header, Validate.vHeader)).toEqual(true)
 });
 
-test('validate ccyamt', () => {
-  expect(Validate.validate(Validate.vCcyAmt, {Amt: '23.02', Ccy: 'CHF'})).toEqual(true)
+test('validateBoolean ccyamt', () => {
+  expect(Validate.validateBoolean({Amt: '23.02', Ccy: 'CHF'}, Validate.vCcyAmt)).toEqual(true)
 });
 
-test('validate RmtInf', () => {
+test('validateBoolean RmtInf', () => {
   const RmtInf = {
     AddInf: {
       SrdBkgInfo: "//S1/10/10201409/11/200701/20/140.000-53/30/102673831/31/200615/32/7.7/33/7.7:139.40/40/0:30",
@@ -29,7 +29,7 @@ test('validate RmtInf', () => {
     Tp: "QRR"
   };
 
-  expect(Validate.validate(Validate.vRmtInf, RmtInf)).toEqual(true);
+  expect(Validate.validateBoolean(RmtInf, Validate.vRmtInf)).toEqual(true);
 });
 
 test('vAltPmtInf', () => {
@@ -38,15 +38,15 @@ test('vAltPmtInf', () => {
     AltPmt2: "Name AV2: XY;XYService;54321"
   };
 
-  expect(Validate.validate(Validate.vAltPmtInf, AltPmtInf)).toEqual(true);
+  expect(Validate.validateBoolean(AltPmtInf, Validate.vAltPmtInf)).toEqual(true);
 });
 
 test('all json', () => {
-  expect(Validate.validate(Validate.sampleJson, sampleJson)).toEqual(true);
+  expect(Validate.validateBoolean(sampleJson)).toEqual(true);
 });
 
 test('all json from array', () => {
   const j = arrayToJson(sampleArray);
 
-  expect(Validate.validate(Validate.sampleJson, j)).toEqual(true);
+  expect(Validate.validateBoolean(j)).toEqual(true);
 })

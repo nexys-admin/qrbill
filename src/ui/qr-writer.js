@@ -2,7 +2,7 @@ import React from 'react';
 
 import QR from '../lib/qr';
 import * as Convert from '../lib/convert';
-import { example, dataLabels } from '../lib/data-examples';
+import { dataLabels } from '../lib/data-examples';
 
 // swiss qr code should be 46 x 46 mm and the cross 7 x 7 mmm in the middle
 

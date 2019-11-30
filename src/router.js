@@ -2,8 +2,7 @@ import React from 'react';
 import {
   Switch,
   Route,
-  withRouter,
-  Link,
+  withRouter
 } from 'react-router-dom';
 
 import Layout from './layout';
