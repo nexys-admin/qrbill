@@ -23,6 +23,7 @@ const prefix = process.env.PUBLIC_URL || '';
 function Router(props) {
   return (<Layout>
     <Switch>
+      <Route path={prefix + '/qrbill/build'} component={Main} />
       <Route path={prefix + '/qr/read'} component={QrReader} props={props} />
       <Route path={prefix + '/qr/write'} component={() => <QrWriter value={dataLabels}/>} props={props} />
       <Route path={prefix + '/convert'} component={Convert} props={props} />
