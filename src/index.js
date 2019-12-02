@@ -8,8 +8,9 @@ import RouterApp from './router';
 import * as serviceWorker from './serviceWorker';
 
 const history = History.createBrowserHistory();
+const basename = process.env.PUBLIC_URL || '';
 
-ReactDOM.render(<Router history={history}><RouterApp/></Router>, document.getElementById('root'));
+ReactDOM.render(<Router basename={basename} history={history}><RouterApp/></Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

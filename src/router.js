@@ -17,18 +17,15 @@ import { dataLabels } from './lib/data-examples';
 
 const NotFound = () => <p>Page Not Found</p>;
 
-
-const prefix = process.env.PUBLIC_URL || '';
-
 function Router(props) {
   return (<Layout>
     <Switch>
-      <Route path={prefix + '/qrbill/build'} component={Main} />
-      <Route path={prefix + '/qr/read'} component={QrReader} props={props} />
-      <Route path={prefix + '/qr/write'} component={() => <QrWriter value={dataLabels}/>} props={props} />
-      <Route path={prefix + '/convert'} component={Convert} props={props} />
-      <Route path={prefix + '/validate'} component={Validate} props={props} />
-      <Route exact path={prefix + '/'} component={Main} />
+      <Route path={'/qrbill/build'} component={Main} />
+      <Route path={'/qr/read'} component={QrReader} props={props} />
+      <Route path={'/qr/write'} component={() => <QrWriter value={dataLabels}/>} props={props} />
+      <Route path={'/convert'} component={Convert} props={props} />
+      <Route path={'/validate'} component={Validate} props={props} />
+      <Route exact path={'/'} component={Main} />
       <Route path="/" component={NotFound} />
     </Switch>
   </Layout>);
