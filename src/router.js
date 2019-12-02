@@ -20,7 +20,7 @@ const NotFound = () => <p>Page Not Found</p>;
 function Router(props) {
   return (<Layout>
     <Switch>
-      <Route path={'/qrbill/build'} component={Main} />
+      <Route path={'/'} component={Main} />
       <Route path={'/qr/read'} component={QrReader} props={props} />
       <Route path={'/qr/write'} component={() => <QrWriter value={dataLabels}/>} props={props} />
       <Route path={'/convert'} component={Convert} props={props} />
