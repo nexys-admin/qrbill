@@ -17,11 +17,13 @@ const menus = [
   {name: 'QR Writer', link: '/qr/write'},
   {name: 'Convert', link: '/convert'},
   {name: 'Validate', link: '/validate'},
-].map(x => {
+];
+
+/*.map(x => {
   x.link = prefix + x.link;
 
   return x;
-})
+})*/
 
 
 function Layout(props) {

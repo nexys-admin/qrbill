@@ -8,7 +8,7 @@ import RouterApp from './router';
 import * as serviceWorker from './serviceWorker';
 
 const history = History.createBrowserHistory();
-const basename = process.env.PUBLIC_URL || '';
+const basename = ''; //process.env.PUBLIC_URL || '';
 
 ReactDOM.render(<HashRouter basename={basename} history={history}><RouterApp/></HashRouter>, document.getElementById('root'));
 
