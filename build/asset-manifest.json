@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/qrbill/build/static/js/main.c6ddb015.chunk.js",
-    "main.js.map": "/qrbill/build/static/js/main.c6ddb015.chunk.js.map",
+    "main.js": "/qrbill/build/static/js/main.ec37fb4c.chunk.js",
+    "main.js.map": "/qrbill/build/static/js/main.ec37fb4c.chunk.js.map",
     "runtime-main.js": "/qrbill/build/static/js/runtime-main.58a47206.js",
     "runtime-main.js.map": "/qrbill/build/static/js/runtime-main.58a47206.js.map",
     "static/js/2.04a4692f.chunk.js": "/qrbill/build/static/js/2.04a4692f.chunk.js",
     "static/js/2.04a4692f.chunk.js.map": "/qrbill/build/static/js/2.04a4692f.chunk.js.map",
     "index.html": "/qrbill/build/index.html",
-    "precache-manifest.7c799073774f4f2398f35248b9c36edf.js": "/qrbill/build/precache-manifest.7c799073774f4f2398f35248b9c36edf.js",
+    "precache-manifest.4ff10b8b2f1109c21c45bbae16785284.js": "/qrbill/build/precache-manifest.4ff10b8b2f1109c21c45bbae16785284.js",
     "service-worker.js": "/qrbill/build/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.58a47206.js",
     "static/js/2.04a4692f.chunk.js",
-    "static/js/main.c6ddb015.chunk.js"
+    "static/js/main.ec37fb4c.chunk.js"
   ]
 }
