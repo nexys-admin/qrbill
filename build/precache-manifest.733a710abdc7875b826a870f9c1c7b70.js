@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2ca6355866a92d564c2581eb2ee2b4fa",
+    "revision": "63e8750418d203439e81b179ba89ef96",
     "url": "/qrbill/build/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qrbill/build/static/js/2.d7ea8c98.chunk.js"
   },
   {
-    "revision": "208a6576e8e7e41c0441",
-    "url": "/qrbill/build/static/js/main.70350e64.chunk.js"
+    "revision": "f2e8c6d4a2a62541f5c2",
+    "url": "/qrbill/build/static/js/main.4c7e37f2.chunk.js"
   },
   {
     "revision": "e40b27793215cea9eeef",
