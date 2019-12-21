@@ -4,9 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/@nexys/qrbill.svg)](https://www.npmjs.com/package/@nexys/qrbill)
 [![CircleCI](https://circleci.com/gh/Nexysweb/qrbill.svg?style=svg)](https://circleci.com/gh/Nexysweb/workflows/qrbill)
 
-* [see GH](https://github.com/nexysweb/qrbill)
-* [see website](https://nexysweb.github.io/qrbill)
-* [see it in action](https://nexysweb.github.io/qrbill/build)
+* [see it in action](https://nexysweb.github.io/qrbill)
 
 ## Package
 
