@@ -7,13 +7,9 @@ import * as History from 'history';
 import RouterApp from './router';
 import * as serviceWorker from './serviceWorker';
 
-//const history = History.createBrowserHistory();
-//const history = History.createBrowserHistory();
 const history = History.createBrowserHistory({
   basename: process.env.PUBLIC_URL || '',
 });
-
-//const basename = ''; //process.env.PUBLIC_URL || '';
 
 ReactDOM.render(<Router history={history}><RouterApp/></Router>, document.getElementById('root'));
 

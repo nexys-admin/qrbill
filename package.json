@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=/qrbill/build react-scripts build;cp build/index.html 404.html",
+    "build": "PUBLIC_URL=/qrbill/build react-scripts build;rm -rf docs; mv build docs;cp docs/index.html docs/404.html",
     "buildpackage": "babel src/lib --out-dir dist/;rm dist/**.test.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
