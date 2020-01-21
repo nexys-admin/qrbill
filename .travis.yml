@@ -1,0 +1,11 @@
+# Tells Travis we're running on a Node environment
+language: 'node_js'
+node_js: '12.10'
+
+# https://docs.travis-ci.com/user/caching/#yarn-cache
+cache: yarn
+
+script:
+- yarn test
+- yarn build
+
