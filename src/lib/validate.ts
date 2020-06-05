@@ -7,7 +7,7 @@ import * as T from "./type";
 // note2: the following groups: UltmtCdtr, UltmtDbtr and CdtrInf:Cdtr are the same (this is not explicitly stated in the documentation)
 // note3: this is a first version and is not complete, PR welcome!
 
-export const sAddress = Joi.object({
+export const sAddress = Joi.object<T.Address>({
   AdrTp: Joi.string().regex(/^[ST]$/),
   Ctry: Joi.string().regex(/^[A-Z]{2}$/),
   Name: Joi.string(),
