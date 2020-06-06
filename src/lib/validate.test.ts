@@ -30,7 +30,7 @@ test("validateBoolean ccyamt", () => {
 test("validateBoolean RmtInf", () => {
   const RmtInf = {
     AddInf: {
-      SrdBkgInfo:
+      StrdBkgInf:
         "//S1/10/10201409/11/200701/20/140.000-53/30/102673831/31/200615/32/7.7/33/7.7:139.40/40/0:30",
       Trailer: "EPD",
       Ustrd: "Order of 15 June 2020",
