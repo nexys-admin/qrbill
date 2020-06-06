@@ -19,7 +19,7 @@ export const sAddress = Joi.object<T.Address>({
 
 export const vCdtrInf = Joi.object<T.CdtrInfo>({
   IBAN: Joi.string().regex(
-    /[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/
+    /(?:CH|LI)[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/
   ),
   Cdtr: sAddress,
 });
