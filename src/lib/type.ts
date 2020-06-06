@@ -29,7 +29,7 @@ export interface CcyAmt extends Main {
 }
 
 export interface RmtInfAddInfo extends Main {
-  SrdBkgInfo: string;
+  StrdBkgInf: string;
   Trailer: string;
   Ustrd: string;
 }

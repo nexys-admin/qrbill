@@ -8,13 +8,13 @@ import * as T from "./type";
 // note3: this is a first version and is not complete, PR welcome!
 
 export const sAddress = Joi.object<T.Address>({
-  AdrTp: Joi.string().regex(/^[ST]$/),
+  AdrTp: Joi.string().regex(/^[SK]$/),
   Ctry: Joi.string().regex(/^[A-Z]{2}$/),
-  Name: Joi.string(),
-  PstCd: Joi.string(),
-  StrNameOrAdrLine1: Joi.string(),
-  StrNameOrAdrLine2: Joi.string(),
-  TmwNm: Joi.string(),
+  Name: Joi.string().max(70),
+  PstCd: Joi.string().max(16),
+  StrNameOrAdrLine1: Joi.string().max(70),
+  StrNameOrAdrLine2: Joi.string().max(70),
+  TmwNm: Joi.string().max(35),
 }).unknown(true);
 
 export const vCdtrInf = Joi.object<T.CdtrInfo>({
@@ -34,22 +34,23 @@ export const vHeader = Joi.object<T.Header>({
 
 export const vCcyAmt = Joi.object<T.CcyAmt>({
   Amt: Joi.string().regex(/^\d+\.\d{2}$/),
-  Ccy: Joi.string().regex(/^[A-Z]{3}$/),
+  Ccy: Joi.string().regex(/(?:CHF|EUR)/), //.regex(/^[A-Z]{3}$/),
 });
 
 export const vRmtInf = Joi.object<T.RmtInf>({
   AddInf: Joi.object({
-    SrdBkgInfo: Joi.string().optional(),
+    StrdBkgInf: Joi.string().optional().max(140),
     Trailer: Joi.string().valid("EPD"),
-    Ustrd: Joi.string().optional(),
+    Ustrd: Joi.string().optional().max(140),
   }),
-  Ref: Joi.string().optional(),
-  Tp: Joi.string().valid("QRR"),
+
+  Tp: Joi.string().valid("QRR").valid("SCOR").valid("NON"),
+  Ref: Joi.string().optional(), // this is however dependent
 });
 
 export const vAltPmtInf = Joi.object<T.AltPmtInf>({
-  AltPmt1: Joi.string().optional(),
-  AltPmt2: Joi.string().optional(),
+  AltPmt1: Joi.string().optional().max(100),
+  AltPmt2: Joi.string().optional().max(100),
 });
 
 export const sampleJson = Joi.object<T.QR>({

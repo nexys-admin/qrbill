@@ -74,7 +74,7 @@ export const jsonToBreakSepFormat = (j: T.QR) => {
 
   const RmtInf: string[] = [j.RmtInf.Tp, j.RmtInf.Ref];
 
-  const RmtInf2: string[] = ["Ustrd", "Trailer", "SrdBkgInfo"].map(
+  const RmtInf2: string[] = ["Ustrd", "Trailer", "StrdBkgInf"].map(
     (k: keyof T.RmtInfAddInfo) => j.RmtInf.AddInf[k]
   );
   const AltPmtInf = altPmtToBreakSepFormat(j.AltPmtInf);
@@ -123,7 +123,7 @@ export const arrayToJson = (t: string[]): T.QR => {
   const UltmtCdtr = arrayToAddress(t, 11);
   const UltmtDtr = arrayToAddress(t, 20);
   const CcyAmt = { Ccy: t[19], Amt: t[18] };
-  const AddInf = { Ustrd: t[29], Trailer: t[30], SrdBkgInfo: t[31] };
+  const AddInf = { Ustrd: t[29], Trailer: t[30], StrdBkgInf: t[31] };
   const RmtInf = { Tp: t[27], Ref: t[28], AddInf };
   const AltPmtInf = { AltPmt1: t[32], AltPmt2: t[33] };
 

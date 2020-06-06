@@ -145,7 +145,7 @@ function QRBillForm(props: { initial: any; onRefresh: (qr: T.QR) => void }) {
         onChange={handleChange}
       />
       <InputWrapper
-        name="RmtInf.AddInf.SrdBkgInfo"
+        name="RmtInf.AddInf.StrdBkgInf"
         form={form}
         onChange={handleChange}
       />
