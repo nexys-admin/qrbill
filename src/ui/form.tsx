@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as UI from "@nexys/uibs4";
 import * as Utils from "@nexys/utils";
+import * as T from "../lib/type";
 
 const { Form } = UI;
 
@@ -23,10 +24,8 @@ const InputWrapper = (props: any) => {
   );
 };
 
-function QRBillForm(
-  props: { initial: any; onRefresh?: any } = { initial: {} }
-) {
-  const [form, changeForm] = useState(props.initial);
+function QRBillForm(props: { initial: any; onRefresh: (qr: T.QR) => void }) {
+  const [form, changeForm] = useState(props.initial || {});
 
   const handleChange = (v: any) => {
     const f = Utils.ds.set(v.name, v.value, form);
@@ -44,6 +43,7 @@ function QRBillForm(
   return (
     <form onSubmit={handleSubmit}>
       <h5>CdtrInf</h5>
+
       <InputWrapper name="CdtrInf.IBAN" form={form} onChange={handleChange} />
       <InputWrapper
         name="CdtrInf.Cdtr.AdrTp"

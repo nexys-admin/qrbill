@@ -1,36 +1,44 @@
 import React, { useState } from "react";
 
 import QR from "../lib/qr";
-import * as Convert from "../lib/convert";
-//import { dataLabels } from '../lib/data-examples';
-import { sampleJson, sampleArray } from "../lib/convert.data";
+import { sampleJson } from "../lib/convert.data";
+import * as T from "../lib/type";
 
 import Form from "./form";
 
-function SwissQr() {
-  const [data, setData] = useState(sampleArray);
+const SwissQr = () => {
+  const [data, setData] = useState<T.QR>(sampleJson);
+  const [checked, setChecked] = useState<boolean>(false);
 
-  const refreshQr = (x: any) => {
-    setData(Convert.jsonToBreakSepFormat(x));
+  const refreshQr = (x: T.QR) => {
+    setData({ ...x });
   };
 
   return (
     <div className="row">
       <div className="col-md-6">
         <h3>Generated Swiss QR</h3>
-        <QR value={data} />
+        <QR qr={data} withExtraInfo={checked} />
       </div>
       <div className="col-md-3">
+        <p>
+          <input
+            type="checkbox"
+            checked={checked}
+            onClick={() => setChecked(!checked)}
+          />{" "}
+          with extra information
+        </p>
         <Form initial={sampleJson} onRefresh={refreshQr} />
       </div>
       <div className="col-md-3">
         <h3>
           QR Content <small>as JSON</small>
         </h3>
-        <pre>{JSON.stringify(Convert.arrayToJson(data), null, 2)}</pre>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
       </div>
     </div>
   );
-}
+};
 
 export default SwissQr;
