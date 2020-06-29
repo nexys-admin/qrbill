@@ -5,6 +5,8 @@ import { sampleJson } from "../lib/convert.data";
 import * as T from "../lib/type";
 
 import Form from "./form";
+import * as UI from "@nexys/uibs4";
+import Print from "./print";
 
 const SwissQr = () => {
   const [data, setData] = useState<T.QR>(sampleJson);
@@ -13,12 +15,18 @@ const SwissQr = () => {
   const refreshQr = (x: T.QR) => {
     setData({ ...x });
   };
-
   return (
     <div className="row">
       <div className="col-md-6">
         <h3>Generated Swiss QR</h3>
         <QR qr={data} withExtraInfo={checked} />
+        <button
+          onClick={() => Print(data)}
+          type="button"
+          className="btn btn-default"
+        >
+          <UI.Components.Icon name="print" />
+        </button>
       </div>
       <div className="col-md-3">
         <p>

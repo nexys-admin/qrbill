@@ -11,6 +11,7 @@
     "@types/react-router-dom": "^5.1.5"
   },
   "devDependencies": {
+    "@bbit/swiss-qr-bill": "^0.1.2",
     "@nexys/uibs4": "0.0.4",
     "@nexys/utils": "^3.9.0",
     "@types/node": "^14.0.11",
