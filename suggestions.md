@@ -19,7 +19,8 @@ An authority managing the different domains would need to be set up.
 
 If the invoice is received by email, the QR code can’t be scanned and so the PDF either needs to be uploaded or a second device is needed. Unpractical and cumbersome.
 Suggestion: implement a mobile version that is a link that contains the content of the QR-code (maybe base 64 encoded) and with a protocol prefix, e.g. swissqr://[base64encodedqrbill]. So that, when clicked, the user is being redirected to the UBS/CS/Raiffeisen etc app where the payment can be finalized and then back to the merchant’s page. If “suggestion#2” is implemented, the merchant can wait for the callback and then move the user to the confirmation page.
-Suggestion #4 - JSON structure
+
+## Suggestion #4 - JSON structure
 The QR-Code content can be a JSON/YML instead of a break-line formatted structure. This would allow for easier and less error-prone QR generation. See https://nexysweb.github.io/qrbill/convert for more details.
 
 ## Suggestion #5 - Digital Signature
