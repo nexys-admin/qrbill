@@ -24,12 +24,14 @@ The QR-Code content can be a JSON/YML instead of a break-line formatted structur
 
 ## Suggestion #5 - Digital Signature
 Enable the issuer to digitally sign the invoice data (QR content) so that the ebanking can ping the issuer (see #2) to verify the integrity of the content. 
-What we already (really) like about the QR-Bill:
 
-Open and decentralized architecture
-Use of QR code
-Free usage
-Swiss Standard
+
+## What we already (really) like about the QR-Bill:
+
+* Open and decentralized architecture
+* Use of QR code
+* Free usage
+* Swiss Standard
 
 ## Supporters:
 * Johan Boissard - johan@nexys.ch
