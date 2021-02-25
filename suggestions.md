@@ -15,15 +15,15 @@ Introduce the ability for banks to call an address that is in the QR-code inform
 This allows merchants to get an instant notification when the payment went through and to do real-time debtor management.
 An authority managing the different domains would need to be set up.
 
-### QRBill as PIS
-
-PSD2 describes payment initiation services (PIS). In Switzerland, this could be very easily handled via the QRBill if suggestion #2 (and #1) is implemented.
-
 ### Payload example
 
 ```
 {date: '2021-02-25T12:55:54.526Z', amount: 102.45, iban: 'CH4431999123000889012', reference: '210000000003139471430009017'}
 ```
+
+### QRBill as PIS
+
+PSD2 describes payment initiation services (PIS). In Switzerland, this could be very easily handled via the QRBill if suggestion #2 (and #1) is implemented.
 
 ## Suggestion #3 - mobile version
 
@@ -41,8 +41,13 @@ The QR-Code content can be a JSON/YML instead of a break-line formatted structur
 
 ## Suggestion #5 - Digital Signature
 
-Enable the issuer to digitally sign the invoice data (QR content) so that the ebanking can ping the issuer (see #2) to verify the integrity of the content. 
+Enable the issuer to digitally sign the invoice data (QR content) so that the ebanking can ping the issuer (see #2) to verify the integrity of the content. Typically hash with SHA256
 
+### example in javascript
+
+```
+crypto.subtle.generateKey({name:'RSA-PSS', modulusLength:2048, publicExponent:new Uint8Array([0x01, 0x00, 0x01]), hash: 'SHA-256'}, false, ['sign']);
+```
 
 ## What we already (really) like about the QR-Bill:
 
