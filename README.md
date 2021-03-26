@@ -1,6 +1,6 @@
 # Swiss Qr Bill - generator and validator
 
-**[QR-Bill improvements suggestions](https://github.com/Nexysweb/qrbill/blob/master/suggestions.md)**
+**[QR-Bill improvements suggestions](https://github.com/Nexysweb/qrbill/blob/master/suggestions.md)**: submitted to SIX, March 2021
 
 [![npm version](https://badge.fury.io/js/%40nexys%2Fqrbill.svg)](https://www.npmjs.com/package/@nexys/qrbill)
 [![npm version](https://img.shields.io/npm/v/@nexys/qrbill.svg)](https://www.npmjs.com/package/@nexys/qrbill)
