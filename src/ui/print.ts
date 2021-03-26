@@ -34,8 +34,8 @@ const print = (data: T.QR) => {
           data.CdtrInf.Cdtr.StrNameOrAdrLine1 +
           " " +
           data.CdtrInf.Cdtr.StrNameOrAdrLine2,
-        postalCode: data.CdtrInf.Cdtr.PstCd,
-        locality: data.CdtrInf.Cdtr.TmwNm,
+        postalCode: data.CdtrInf.Cdtr.PstCd || "",
+        locality: data.CdtrInf.Cdtr.TmwNm || "",
         country: data.CdtrInf.Cdtr.Ctry,
       },
       reference: data.RmtInf.Ref,

@@ -25,15 +25,12 @@ export const createJson = (
   };
 };
 
-const ToBreakSepFormat = <A extends { [k: string]: string }>(
-  labels: (keyof A)[],
-  a?: A
-): string[] => {
+const ToBreakSepFormat = <A>(labels: (keyof A)[], a?: A): string[] => {
   if (!a || a === null) {
     return labels.map((_) => "");
   }
 
-  return labels.map((k: keyof A) => a[k]);
+  return labels.map((k: keyof A) => (a[k] ? String(a[k]) : ""));
 };
 
 export const addressToBreakSepFormat = (a?: T.Address): string[] => {
@@ -47,7 +44,7 @@ export const addressToBreakSepFormat = (a?: T.Address): string[] => {
     "Ctry",
   ];
 
-  return ToBreakSepFormat<T.Address>(addressLabels, a);
+  return ToBreakSepFormat(addressLabels, a);
 };
 
 const altPmtToBreakSepFormat = (a?: T.AltPmtInf): string[] => {
@@ -89,23 +86,36 @@ export const jsonToBreakSepFormat = (j: T.QR) => {
     .concat(AltPmtInf);
 };
 
+const isAdrTp = (s: string): s is "S" | "K" => s === "S" || s === "K";
+
 export const arrayToAddress = (t: string[], idx = 0): T.Address | undefined => {
+  // check if not null
+  const isNull: boolean = [0, 1, 2, 3, 4, 5, 6]
+    .map((i) => t[idx + i] === "")
+    .reduce((a, b) => a && b, true);
+
+  if (isNull) {
+    return undefined;
+  }
+
+  const AdrTp = t[idx];
+
+  if (!isAdrTp(AdrTp)) {
+    throw Error("input not correct, adrtp must be S or K");
+  }
+
   const r: T.Address = {
-    AdrTp: t[idx],
+    AdrTp,
     Name: t[idx + 1],
     StrNameOrAdrLine1: t[idx + 2],
     StrNameOrAdrLine2: t[idx + 3],
-    PstCd: t[idx + 4],
-    TmwNm: t[idx + 5],
+
     Ctry: t[idx + 6],
   };
 
-  const checkIfNull = Object.keys(r)
-    .map((k) => r[k] === "")
-    .reduce((a, b) => a && b);
-
-  if (checkIfNull === true) {
-    return undefined;
+  if (AdrTp === "S") {
+    r.PstCd = t[idx + 4];
+    r.TmwNm = t[idx + 5];
   }
 
   return r;
@@ -123,18 +133,22 @@ export const arrayToJson = (t: string[]): T.QR => {
   const UltmtCdtr = arrayToAddress(t, 11);
   const UltmtDtr = arrayToAddress(t, 20);
   const CcyAmt = { Ccy: t[19], Amt: t[18] };
-  const AddInf = { Ustrd: t[29], Trailer: t[30], StrdBkgInf: t[31] };
+  const AddInf = { Ustrd: t[29], Trailer: t[30], StrdBkgInf: t[31] || "" };
   const RmtInf = { Tp: t[27], Ref: t[28], AddInf };
-  const AltPmtInf =
-    t[32] && t[33] ? { AltPmt1: t[32], AltPmt2: t[33] } : undefined;
 
-  return {
+  const r: T.QR = {
     Header,
     CdtrInf,
     UltmtCdtr,
     UltmtDtr,
     CcyAmt,
     RmtInf,
-    AltPmtInf,
   };
+
+  if (t[32] && t[33]) {
+    const AltPmtInf = { AltPmt1: t[32], AltPmt2: t[33] };
+    r.AltPmtInf = AltPmtInf;
+  }
+
+  return r;
 };

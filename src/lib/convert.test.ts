@@ -6,6 +6,8 @@ import {
   sampleArray,
   sampleArray2,
   sampleJson2,
+  sampleArray3,
+  sampleJson3,
 } from "./convert.data";
 
 test("arrayToAddress", () => {
@@ -14,10 +16,6 @@ test("arrayToAddress", () => {
 
 test("array to json", () => {
   expect(Convert.arrayToJson(sampleArray)).toEqual(sampleJson);
-});
-
-test("array to json 2", () => {
-  expect(Convert.arrayToJson(sampleArray2)).toEqual(sampleJson2);
 });
 
 test("jsonToBreakSepFormat", () => {

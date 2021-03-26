@@ -23,7 +23,6 @@ export const sampleAddressJson: T.Address = {
 };
 
 export const sampleArray: string[] = E.example;
-export const sampleArray2: string[] = E.example2;
 
 const Cdtr: T.Address = {
   AdrTp: "S",
@@ -82,63 +81,3 @@ export const sampleJson: T.QR = {
   RmtInf,
   AltPmtInf,
 };
-
-const getSample2 = () => {
-  const Cdtr: T.Address = {
-    AdrTp: "K",
-    Name: "Apartments Swiss Star AG",
-    StrNameOrAdrLine1: "Pünten 5",
-    StrNameOrAdrLine2: "8602 Wangen",
-    PstCd: "",
-    TmwNm: "",
-    Ctry: "CH",
-  };
-
-  const UltmtCdtr = undefined;
-
-  const UltmtDtr: T.Address = {
-    AdrTp: "S",
-    Ctry: "CH",
-    Name: "Johan Boissard",
-    PstCd: "8004",
-    StrNameOrAdrLine1: "Badenerstrasse",
-    StrNameOrAdrLine2: "362",
-    TmwNm: "Zürich",
-  };
-
-  const RmtInf: T.RmtInf = {
-    AddInf: {
-      StrdBkgInf: "//S1/10/2021222099/11/210315/31/210401210430",
-      Trailer: "EPD",
-      Ustrd: "Rechnungs-Nr. 2021222099",
-    },
-    Ref: "000000000000000020212220999",
-    Tp: "QRR",
-  };
-
-  const AltPmtInf: T.AltPmtInf = {
-    AltPmt1: "",
-    AltPmt2: "",
-  };
-
-  const CcyAmt: T.CcyAmt = {
-    Amt: "750.00",
-    Ccy: "CHF",
-  };
-
-  const CdtrInf: T.CdtrInfo = {
-    IBAN: "CH2030808005306930873",
-    Cdtr,
-  };
-
-  return {
-    Header,
-    CdtrInf,
-    CcyAmt,
-    UltmtDtr,
-    UltmtCdtr,
-    RmtInf,
-  };
-};
-
-export const sampleJson2: T.QR = getSample2();

@@ -23,3 +23,6 @@ build.zip
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/lib/data.local.ts
+src/lib/local.test.ts

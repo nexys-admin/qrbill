@@ -7,15 +7,26 @@ import * as T from "./type";
 // note2: the following groups: UltmtCdtr, UltmtDbtr and CdtrInf:Cdtr are the same (this is not explicitly stated in the documentation)
 // note3: this is a first version and is not complete, PR welcome!
 
-export const sAddress = Joi.object<T.Address>({
-  AdrTp: Joi.string().regex(/^[SK]$/),
-  Ctry: Joi.string().regex(/^[A-Z]{2}$/),
+const addressK = Joi.object<T.Address>({
+  AdrTp: "K",
   Name: Joi.string().max(70),
-  PstCd: Joi.string().max(16),
   StrNameOrAdrLine1: Joi.string().max(70),
   StrNameOrAdrLine2: Joi.string().max(70),
+  Ctry: Joi.string().regex(/^[A-Z]{2}$/),
+});
+
+const addressS = Joi.object<T.Address>({
+  AdrTp: "S",
+  Name: Joi.string().max(70),
+  StrNameOrAdrLine1: Joi.string().max(70),
+  StrNameOrAdrLine2: Joi.string().max(16).optional(),
+  PstCd: Joi.string().max(16),
   TmwNm: Joi.string().max(35),
-}).unknown(true);
+  Ctry: Joi.string().regex(/^[A-Z]{2}$/),
+});
+
+export const sAddress = Joi.alternatives().try(addressK, addressS).required();
+//.unknown(true);
 
 export const vCdtrInf = Joi.object<T.CdtrInfo>({
   IBAN: Joi.string().regex(
@@ -39,9 +50,9 @@ export const vCcyAmt = Joi.object<T.CcyAmt>({
 
 export const vRmtInf = Joi.object<T.RmtInf>({
   AddInf: Joi.object({
-    StrdBkgInf: Joi.string().optional().max(140),
+    StrdBkgInf: Joi.string().allow("").optional().max(140),
     Trailer: Joi.string().valid("EPD"),
-    Ustrd: Joi.string().optional().max(140),
+    Ustrd: Joi.string().allow("").optional().max(140),
   }),
 
   Tp: Joi.string().valid("QRR").valid("SCOR").valid("NON"),
@@ -85,10 +96,11 @@ export const validateBoolean = (
   schema: Joi.Schema = sampleJson
 ): boolean => {
   const { error } = validate(o, schema);
+  console.log(error);
 
   if (!error) {
-    return false;
+    return true;
   }
 
-  return true;
+  return false;
 };

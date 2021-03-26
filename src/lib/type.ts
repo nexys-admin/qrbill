@@ -2,14 +2,14 @@ interface Main {
   [k: string]: string;
 }
 
-export interface Address extends Main {
-  AdrTp: string;
-  Ctry: string;
+export interface Address {
+  AdrTp: "K" | "S";
   Name: string;
-  PstCd: string;
   StrNameOrAdrLine1: string;
   StrNameOrAdrLine2: string;
-  TmwNm: string;
+  TmwNm?: string;
+  PstCd?: string;
+  Ctry: string;
 }
 
 export interface CdtrInfo {
