@@ -30,7 +30,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "PUBLIC_URL=/qrbill react-scripts build;rm -rf docs; mv build docs;cp docs/index.html docs/404.html",
-    "obuildpackage": "babel src/lib --out-dir dist/",
     "buildpackage": "tsc -p tsconfig.build.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
