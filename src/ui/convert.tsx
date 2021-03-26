@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import * as UI from "@nexys/uibs4";
 import * as Convert from "../lib/convert";
-import { sample } from "../lib/convert.data";
+import { sampleArray } from "../lib/convert.data";
+
+const sample = sampleArray.join("\n");
 
 function Ui() {
   const [form, handleChange] = useState<any>({ text: sample });

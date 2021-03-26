@@ -125,7 +125,8 @@ export const arrayToJson = (t: string[]): T.QR => {
   const CcyAmt = { Ccy: t[19], Amt: t[18] };
   const AddInf = { Ustrd: t[29], Trailer: t[30], StrdBkgInf: t[31] };
   const RmtInf = { Tp: t[27], Ref: t[28], AddInf };
-  const AltPmtInf = { AltPmt1: t[32], AltPmt2: t[33] };
+  const AltPmtInf =
+    t[32] && t[33] ? { AltPmt1: t[32], AltPmt2: t[33] } : undefined;
 
   return {
     Header,

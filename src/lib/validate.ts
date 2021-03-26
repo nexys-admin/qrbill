@@ -60,7 +60,7 @@ export const sampleJson = Joi.object<T.QR>({
   UltmtDtr: sAddress.allow(null).optional(),
   UltmtCdtr: sAddress.allow(null).optional(),
   RmtInf: vRmtInf,
-  AltPmtInf: vAltPmtInf,
+  AltPmtInf: vAltPmtInf.optional(),
 });
 
 /**
@@ -83,4 +83,12 @@ export const validate = (
 export const validateBoolean = (
   o: any,
   schema: Joi.Schema = sampleJson
-): boolean => !validate(o, schema).error;
+): boolean => {
+  const { error } = validate(o, schema);
+
+  if (!error) {
+    return false;
+  }
+
+  return true;
+};
