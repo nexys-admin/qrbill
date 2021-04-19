@@ -56,7 +56,7 @@ export const vRmtInf = Joi.object<T.RmtInf>({
   }),
 
   Tp: Joi.string().valid("QRR").valid("SCOR").valid("NON"),
-  Ref: Joi.string().optional(), // this is however dependent
+  Ref: Joi.string().allow("").optional(), // this is however dependent
 });
 
 export const vAltPmtInf = Joi.object<T.AltPmtInf>({
