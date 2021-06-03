@@ -45,9 +45,7 @@ Enable the issuer to digitally sign the invoice data (QR content) so that the eb
 
 ### example in javascript
 
-```
-crypto.subtle.generateKey({name:'RSA-PSS', modulusLength:2048, publicExponent:new Uint8Array([0x01, 0x00, 0x01]), hash: 'SHA-256'}, false, ['sign']);
-```
+see https://github.com/johnb8005/signature
 
 ## What we already (really) like about the QR-Bill:
 
