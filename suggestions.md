@@ -57,8 +57,4 @@ crypto.subtle.generateKey({name:'RSA-PSS', modulusLength:2048, publicExponent:ne
 * Swiss Standard
 
 ## Supporters:
-* Johan Boissard - johan@nexys.ch
-* Raphael Ochsenbein - raphael@akehir.com
-* Philipp Wiget 
-* Julian Liniger
-* Florian Barras
+*get in touch to get a list of supporters*
