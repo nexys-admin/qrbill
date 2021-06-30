@@ -4,10 +4,6 @@ import {
   sampleAddressJson,
   sampleJson,
   sampleArray,
-  sampleArray2,
-  sampleJson2,
-  sampleArray3,
-  sampleJson3,
 } from "./convert.data";
 
 test("arrayToAddress", () => {
