@@ -1,10 +1,10 @@
-import * as Convert from "./convert";
+import * as Convert from "./index";
 import {
   sampleAddressArray,
   sampleAddressJson,
   sampleJson,
   sampleArray,
-} from "./convert.data";
+} from "./data";
 
 test("arrayToAddress", () => {
   expect(Convert.arrayToAddress(sampleAddressArray)).toEqual(sampleAddressJson);

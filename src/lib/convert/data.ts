@@ -1,6 +1,7 @@
-import { Header } from "./convert";
-import * as T from "./type";
-import * as E from "./data-examples";
+import { Header } from "./index";
+import * as T from "../type";
+import * as E from "../data-examples";
+import { stringToArray } from "./utils";
 
 const sampleAddress: string = `S
 Robert Schneider AG
@@ -10,7 +11,7 @@ Rue du Lac
 Biel
 CH`;
 
-export const sampleAddressArray: string[] = sampleAddress.split("\n");
+export const sampleAddressArray: string[] = stringToArray(sampleAddress);
 
 export const sampleAddressJson: T.Address = {
   AdrTp: "S",

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import * as UI from "@nexys/uibs4";
 import * as Validate from "../lib/validate";
-import { sampleJson } from "../lib/convert.data";
+import { sampleJson } from "../lib/convert/data";
 
 function Ui() {
   const [form, handleChange] = useState<any>({

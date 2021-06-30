@@ -1,4 +1,5 @@
-import * as T from "./type";
+import * as T from "../type";
+import { stringToArray } from "./utils";
 
 export const Header = {
   QRType: "SPC", // swiss payment code
@@ -101,7 +102,9 @@ export const arrayToAddress = (t: string[], idx = 0): T.Address | undefined => {
   const AdrTp = t[idx];
 
   if (!isAdrTp(AdrTp)) {
-    throw Error("input not correct, adrtp must be S or K");
+    throw Error(
+      "input not correct, adrtp must be S or K, found: " + JSON.stringify(AdrTp)
+    );
   }
 
   const r: T.Address = {
@@ -120,6 +123,8 @@ export const arrayToAddress = (t: string[], idx = 0): T.Address | undefined => {
 
   return r;
 };
+
+export const stringToJson = (t: string) => arrayToJson(stringToArray(t));
 
 export const arrayToJson = (t: string[]): T.QR => {
   const IBAN = t[3];

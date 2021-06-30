@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import QR from "../lib/qr";
-import { sampleJson } from "../lib/convert.data";
+import { sampleJson } from "../lib/convert/data";
 import * as T from "../lib/type";
 
 import Form from "./form";

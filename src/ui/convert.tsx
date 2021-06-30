@@ -2,19 +2,24 @@ import React, { useState } from "react";
 
 import * as UI from "@nexys/uibs4";
 import * as Convert from "../lib/convert";
-import { sampleArray } from "../lib/convert.data";
+import { sampleArray } from "../lib/convert/data";
+import { QR } from "../lib/type";
 
 const sample = sampleArray.join("\n");
 
-function Ui() {
-  const [form, handleChange] = useState<any>({ text: sample });
+const Ui = () => {
+  const [text, setText] = useState<string>(sample);
+  const [converted, setConverted] = useState<QR | undefined>();
+  //const [form, handleChange] = useState<{ text: string; convert?: QR }>({
+  //text: sample,
+  //});
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const convert = Convert.arrayToJson(form.text.split("\n"));
+    const c: QR = Convert.stringToJson(text);
 
-    handleChange({ ...form, convert });
+    setConverted(c);
   };
 
   return (
@@ -24,21 +29,29 @@ function Ui() {
         <div className="col-md-6">
           <form onSubmit={handleSubmit}>
             <UI.Form.Textarea
-              onChange={(v: any) => handleChange({ ...form, text: v.value })}
+              onChange={(v: { value: string }) => setText(v.value)}
               name="text"
-              value={form.text}
+              value={text}
             />
             <button type="submit" className="btn btn-primary">
               Convert
             </button>
           </form>
         </div>
-        <div className="col-md-6">
-          <pre>{JSON.stringify(form.convert, null, 2)}</pre>
-        </div>
+        {converted && (
+          <div className="col-md-6">
+            <pre>{JSON.stringify(converted, null, 2)}</pre>
+            <button
+              onClick={() => setConverted(undefined)}
+              className={"btn btn-primary"}
+            >
+              Reset
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Ui;

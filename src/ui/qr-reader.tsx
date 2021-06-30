@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import QrReader from "react-qr-reader";
 
 import * as Validate from "../lib/validate";
-import { arrayToJson } from "../lib/convert";
+import { arrayToJson, stringToJson } from "../lib/convert";
 import * as T from "../lib/type";
 
 export default () => {
@@ -14,15 +14,15 @@ export default () => {
   const handleScan = (data: any) => {
     if (data) {
       console.log(data);
-      const arr = data.split("\n");
-      const j: T.QR = arrayToJson(arr);
+
+      const j: T.QR = stringToJson(data);
 
       console.log(j);
 
       if (Validate.validateBoolean(j)) {
         setResult(j);
       } else {
-        setResult("The QRr Code read is not a valid Swiss QRBIll");
+        setResult("The QR Code read is not a valid Swiss QRBIll");
       }
     }
   };
