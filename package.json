@@ -1,6 +1,6 @@
 {
   "name": "@nexys/qrbill",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "license": "MIT",
   "repository": "git://github.com/Nexysweb/qrbill.git",
   "dependencies": {
