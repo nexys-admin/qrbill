@@ -1,20 +1,19 @@
 import React, {useState} from "../_snowpack/pkg/react.js";
 import QrReader from "../_snowpack/pkg/react-qr-reader.js";
 import * as Validate from "../lib/validate.js";
-import {arrayToJson} from "../lib/convert.js";
+import {stringToJson} from "../lib/convert/index.js";
 export default () => {
   const [result, setResult] = useState("no result");
   const show = true;
   const handleScan = (data) => {
     if (data) {
       console.log(data);
-      const arr = data.split("\n");
-      const j = arrayToJson(arr);
+      const j = stringToJson(data);
       console.log(j);
       if (Validate.validateBoolean(j)) {
         setResult(j);
       } else {
-        setResult("The QRr Code read is not a valid Swiss QRBIll");
+        setResult("The QR Code read is not a valid Swiss QRBIll");
       }
     }
   };

@@ -1,6 +1,6 @@
 import React, {useState} from "../_snowpack/pkg/react.js";
 import QR from "../lib/qr/index.js";
-import {sampleJson} from "../lib/convert.data.js";
+import {sampleJson} from "../lib/convert/data.js";
 import Form from "./form.js";
 import * as UI from "../_snowpack/pkg/@nexys/uibs4.js";
 import Print from "./print.js";
