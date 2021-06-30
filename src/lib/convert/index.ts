@@ -1,5 +1,9 @@
 import * as T from "../type";
-import { stringToArray } from "./utils";
+import * as Utils from "./utils";
+
+export { Utils };
+
+const { stringToArray } = Utils;
 
 export const Header = {
   QRType: "SPC", // swiss payment code
