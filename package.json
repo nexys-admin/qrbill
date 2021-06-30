@@ -5,6 +5,7 @@
   "repository": "git://github.com/Nexysweb/qrbill.git",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
+    "@nexys/validation": "^2.1.0",
     "@types/hapi__joi": "^17.1.2",
     "@types/jest": "^25.2.3",
     "@types/react-qr-reader": "^2.1.3",
