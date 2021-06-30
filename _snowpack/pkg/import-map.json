@@ -4,6 +4,7 @@
     "@hapi/joi": "./@hapi/joi.js",
     "@nexys/uibs4": "./@nexys/uibs4.js",
     "@nexys/utils": "./@nexys/utils.js",
+    "@nexys/validation": "./@nexys/validation.js",
     "history": "./history.js",
     "qrcode.react": "./qrcode.react.js",
     "react": "./react.js",
