@@ -35,7 +35,7 @@
   "scripts": {
     "buildpackage": "tsc -p tsconfig.build.json",
     "start": "SNOWPACK_PUBLIC_URL= snowpack dev",
-    "build": "snowpack build",
+    "build": "SNOWPACK_PUBLIC_URL=/qrbill snowpack build",
     "test": "jest"
   },
   "main": "dist/index.js",
