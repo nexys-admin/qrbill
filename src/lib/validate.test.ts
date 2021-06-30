@@ -1,5 +1,5 @@
 import * as Validate from "./validate";
-import { sampleAddressJson, sampleJson, sampleArray } from "./convert.data";
+import { sampleAddressJson, sampleJson, sampleArray } from "./convert/data";
 import { Header, arrayToJson } from "./convert";
 
 test("validateBoolean address", () => {
