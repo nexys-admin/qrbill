@@ -4,4 +4,4 @@ export const version =
 export const sha = import.meta.env.SNOWPACK_PUBLIC_GIT_SHA || "unset_sha";
 export const githubUrlVersion: string = `${githubUrl}/releases/tag/${version}`;
 export const title = "Swiss QR Bill";
-export const publicUrl: string = import.meta.env.PUBLIC_URL || "";
+export const publicUrl: string = import.meta.env.SNOWPACK_PUBLIC_URL || "";
