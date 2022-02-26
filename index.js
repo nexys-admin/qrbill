@@ -5,7 +5,6 @@ import ReactDOM from "./_snowpack/pkg/react-dom.js";
 import {Router} from "./_snowpack/pkg/react-router-dom.js";
 import * as History from "./_snowpack/pkg/history.js";
 import RouterApp from "./router.js";
-import * as serviceWorker from "./serviceWorker.js";
 const basename = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_URL || "";
 const history = History.createBrowserHistory({
   basename
@@ -13,4 +12,3 @@ const history = History.createBrowserHistory({
 ReactDOM.render(/* @__PURE__ */ React.createElement(Router, {
   history
 }, /* @__PURE__ */ React.createElement(RouterApp, null)), document.getElementById("root"));
-serviceWorker.unregister();
