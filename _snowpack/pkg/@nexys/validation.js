@@ -1,24 +1,38 @@
 import { c as createCommonjsModule, a as commonjsGlobal, g as getDefaultExportFromCjs } from '../common/_commonjsHelpers-8c19dec8.js';
-import { d as dist$1 } from '../common/index-6164f816.js';
 
 var utils = createCommonjsModule(function (module, exports) {
-var __importDefault = (commonjsGlobal && commonjsGlobal.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkId = exports.checkInteger = exports.regexCheck = exports.passwordCheck = exports.checkUuid = exports.emailCheck = void 0;
-var utils_1 = __importDefault(dist$1);
+exports.checkId = exports.checkInteger = exports.regexCheck = exports.passwordCheck = exports.checkUuid = exports.emailCheck = exports.isUUID = void 0;
+var isEmail = function (email) {
+    var emailRegex = /^[a-zA-Z0-9\.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
+    var regexResult = email.match(emailRegex);
+    if (!regexResult) {
+        return false;
+    }
+    return regexResult.includes(email);
+};
+exports.isUUID = function (str, version) {
+    if (version === void 0) { version = "all"; }
+    var patterns = {
+        3: /^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$/i,
+        4: /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
+        5: /^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
+        all: /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/i,
+    };
+    var pattern = patterns[version];
+    return pattern && pattern.test(str);
+};
 exports.emailCheck = function (email) {
     var tEmail = email.trim();
     if (tEmail !== email) {
         return ["email must not contain any whitespace (before or after)"];
     }
-    if (!utils_1.default.string.isEmail(email)) {
+    if (!isEmail(email)) {
         return ["email invalid"];
     }
 };
 exports.checkUuid = function (uuid) {
-    if (!utils_1.default.string.isUUID(uuid)) {
+    if (!exports.isUUID(uuid)) {
         return ["uuid invalid"];
     }
 };
@@ -318,7 +332,6 @@ var Type = __importStar(type);
 exports.Type = Type;
 var Utils = __importStar(utils);
 exports.Utils = Utils;
-exports.default = Main;
 });
 
 var __pika_web_default_export_for_treeshaking__ = /*@__PURE__*/getDefaultExportFromCjs(dist);
