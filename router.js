@@ -1,6 +1,6 @@
 import React from "./_snowpack/pkg/react.js";
 import {Switch, Route, withRouter} from "./_snowpack/pkg/react-router-dom.js";
-import Layout from "./layout.js";
+import Layout from "./layout/index.js";
 import Convert from "./ui/convert.js";
 import Validate from "./ui/validate.js";
 import QrReader from "./ui/qr-reader.js";
