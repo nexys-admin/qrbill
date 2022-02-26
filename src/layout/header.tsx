@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { title } from './config';
+import { title } from '../config';
 
 const style = {
   borderTop: "1px solid #e5e5e5",
