@@ -8,7 +8,7 @@
 [![Publish](https://github.com/Nexysweb/qrbill/actions/workflows/publish.yml/badge.svg)](https://github.com/Nexysweb/qrbill/actions/workflows/publish.yml)
 
 
-* [see it in action](https://nexysweb.github.io/qrbill)
+* [see it in action](https://nexys-admin.github.io/qrbill/)
 
 ## Package
 
