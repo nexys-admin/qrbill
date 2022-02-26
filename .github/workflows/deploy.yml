@@ -1,27 +1,18 @@
 # https://medium.com/@cmichel/how-to-deploy-a-create-react-app-with-github-actions-5e01f7a7b6b
 name: Deployment
+
 on:
   push:
-    branches:
-      - master
+    tags:
+      - v*
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: env var
-        run: |
-          echo "GITHUB_SHA=$GITHUB_SHA"
-          echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
       - name: Install Packages
-        run: npm install
+        run: yarn install
       - name: Build page
         run: REACT_APP_VERSION=${GITHUB_REF##*/} REACT_APP_GIT_SHA=$GITHUB_SHA PUBLIC_URL=/qrbill yarn build
       - name: add 404

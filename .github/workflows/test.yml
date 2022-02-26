@@ -1,9 +1,6 @@
 name: Publish
 
-on:
-  push:
-    tags:
-      - v*
+on: [push]
 
 jobs:
   test:
@@ -17,7 +14,3 @@ jobs:
       - run: yarn
       - run: yarn buildpackage
       - run: yarn test
-      - name: Publish package
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-          yarn publish --access public
