@@ -5,4 +5,4 @@ export const version = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_VERSION || "unset_versio
 export const sha = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_GIT_SHA || "unset_sha";
 export const githubUrlVersion = `${githubUrl}/releases/tag/${version}`;
 export const title = "Swiss QR Bill";
-export const publicUrl = __SNOWPACK_ENV__.PUBLIC_URL || "";
+export const publicUrl = __SNOWPACK_ENV__.SNOWPACK_PUBLIC_URL || "";

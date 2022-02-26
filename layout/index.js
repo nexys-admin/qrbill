@@ -1,9 +1,7 @@
 import React from "../_snowpack/pkg/react.js";
-import {version, githubUrlVersion} from "../config.js";
 import Header from "./header.js";
+import Footer from "./footer.js";
 const Layout = ({children}) => /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Header, null), /* @__PURE__ */ React.createElement("div", {
   className: "container"
-}, children), /* @__PURE__ */ React.createElement("footer", null, /* @__PURE__ */ React.createElement("small", null, /* @__PURE__ */ React.createElement("a", {
-  href: githubUrlVersion
-}, version))));
+}, children), /* @__PURE__ */ React.createElement(Footer, null));
 export default Layout;
