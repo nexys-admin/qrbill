@@ -1,6 +1,6 @@
 import { c as createCommonjsModule, g as getDefaultExportFromCjs } from './common/_commonjsHelpers-8c19dec8.js';
 import { r as react } from './common/index-fc424163.js';
-import { p as propTypes } from './common/index-8ab56611.js';
+import { p as propTypes } from './common/index-ce016b4a.js';
 
 function NoVideoInputDevicesError() {
   this.name = 'NoVideoInputDevicesError';
