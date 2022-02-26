@@ -5,7 +5,7 @@ import { version, githubUrlVersion } from '../config';
 
 import Header from './header'
 
-const Layout = () => <>
+const Layout = ({children}:{children: JSX.Element | JSX.Element[]}) => <>
   <Header/>
   <div className="container">{props.children}</div>
   <footer><small><a href={githubUrlVersion}>{version}</a></small></footer>
