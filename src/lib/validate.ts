@@ -10,8 +10,8 @@ import * as T from "./type";
 const addressK = Joi.object<T.Address>({
   AdrTp: "K",
   Name: Joi.string().max(70),
-  StrNameOrAdrLine1: Joi.string().max(70),
-  StrNameOrAdrLine2: Joi.string().max(70),
+  StrNameOrAdrLine1: Joi.string().allow("").max(70),
+  StrNameOrAdrLine2: Joi.string().allow("").max(70),
   Ctry: Joi.string().regex(/^[A-Z]{2}$/),
 });
 
