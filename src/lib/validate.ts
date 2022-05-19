@@ -18,7 +18,7 @@ const addressK = Joi.object<T.Address>({
 const addressS = Joi.object<T.Address>({
   AdrTp: "S",
   Name: Joi.string().max(70),
-  StrNameOrAdrLine1: Joi.string().max(70),
+  StrNameOrAdrLine1: Joi.string().max(70).optional(),
   StrNameOrAdrLine2: Joi.string().max(16).optional(),
   PstCd: Joi.string().max(16),
   TmwNm: Joi.string().max(35),
