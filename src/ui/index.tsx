@@ -11,6 +11,9 @@ export default () => (<div>
 
   <p>Do you need help with the transition to the new <a href="https://www.six-group.com/interbank-clearing/en/home/standardization/payment-slips.html">QR Bill</a> and in general <a href="https://www.six-group.com/interbank-clearing/en/home/standardization/iso-payments.html">ISO20022</a>? Please get in touch at <a href="info@nexys.ch">info [@] nexys.ch</a></p>
 
-  <p><a href={githubUrl}><UI.Components.Icon name="code"/> Source</a>. Contributions are welcome. <small>Make sure you read and understand the <a href="https://github.com/nexys-admin/qrbill/blob/master/LICENSE">license terms</a>.</small></p>
-
+  <p>
+    <a href={githubUrl}><UI.Components.Icon name="code"/> Source</a> available.
+    Contributions are welcome.
+    <small>Make sure you read and understand the <a href="https://github.com/nexys-admin/qrbill/blob/master/LICENSE">license terms</a>.</small>
+  </p>
 </div>);
