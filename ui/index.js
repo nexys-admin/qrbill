@@ -14,6 +14,6 @@ export default () => /* @__PURE__ */ React.createElement("div", null, /* @__PURE
   href: githubUrl
 }, /* @__PURE__ */ React.createElement(UI.Components.Icon, {
   name: "code"
-}), " Source"), ". Contributions are welcome. ", /* @__PURE__ */ React.createElement("small", null, "Make sure you read and understand the ", /* @__PURE__ */ React.createElement("a", {
+}), " Source"), " available. Contributions are welcome.", /* @__PURE__ */ React.createElement("small", null, "Make sure you read and understand the ", /* @__PURE__ */ React.createElement("a", {
   href: "https://github.com/nexys-admin/qrbill/blob/master/LICENSE"
 }, "license terms"), ".")));

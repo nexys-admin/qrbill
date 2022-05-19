@@ -1,6 +1,6 @@
 import React from "../_snowpack/pkg/react.js";
 import {Link} from "../_snowpack/pkg/react-router-dom.js";
-import {publicUrl, title} from "../config.js";
+import {title} from "../config.js";
 const style = {
   borderTop: "1px solid #e5e5e5",
   borderBottom: "1px solid #e5e5e5",
@@ -18,7 +18,7 @@ const Header = () => /* @__PURE__ */ React.createElement("header", null, /* @__P
 }, /* @__PURE__ */ React.createElement("h5", {
   className: "my-0 mr-md-auto font-weight-normal"
 }, /* @__PURE__ */ React.createElement(Link, {
-  to: publicUrl + "/"
+  to: "/"
 }, title)), /* @__PURE__ */ React.createElement("nav", {
   className: "my-2 my-md-0 mr-md-3"
 }, menus.map((menu, i) => /* @__PURE__ */ React.createElement(Link, {
