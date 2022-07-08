@@ -1,4 +1,5 @@
-# Swiss Qr Bill - generator and validator
+# Swiss Qr Bill
+## Generator, Reader and Validator
 
 **[QR-Bill improvements suggestions](https://github.com/nexys-admin/qrbill/blob/master/suggestions.md)**: submitted to SIX, March 2021
 
